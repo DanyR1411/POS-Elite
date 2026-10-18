@@ -1,0 +1,34 @@
+{
+  "name": "pos-elite",
+  "version": "1.0.0",
+  "description": "Sistema de Punto de Venta profesional con soporte dual moneda USD/VES",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.pos.elite",
+    "productName": "POS Elite Pro",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "keywords": [
+    "pos",
+    "punto-de-venta",
+    "electron",
+    "venezuela",
+    "facturacion"
+  ],
+  "author": "",
+  "license": "ISC",
+  "allowScripts": {
+    "electron@29.4.6": true
+  }
+}
