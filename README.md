@@ -1,5 +1,7 @@
 # 🚀 POS Elite Pro
 
+![descripcion](https://github.com/DanyR1411/POS-Elite/blob/main/assets/pos%20elite%20logo-bg.png)
+
 > Sistema de Punto de Venta profesional para pequeños y medianos negocios, desarrollado con Electron. Diseñado para funcionar sin conexión a Internet, con almacenamiento local de datos y soporte para impresión de tickets térmicos.
 
 ---
