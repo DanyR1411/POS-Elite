@@ -125,9 +125,9 @@ pos-elite/
 
 | Vista | Descripción |
 |---|---|
-| 🛒 **Venta** | Catálogo de productos + carrito de compras | ![descripcion](https://github.com/DanyR1411/POS-Elite/blob/main/assets/pos)
-| 📊 **Historial** | Registro de ventas, créditos y cierre de caja | ![descripcion](https://github.com/DanyR1411/POS-Elite/blob/main/assets/historial.PNG)
-| ⚙️ **Admin** | Gestión de productos, clientes y configuración | ![descripcion](https://github.com/DanyR1411/POS-Elite/blob/main/assets/admin.PNG)
+| 🛒 **Venta** | Catálogo de productos + carrito de compras  ![descripcion](https://github.com/DanyR1411/POS-Elite/blob/main/assets/pos%20elite.PNG) |
+| 📊 **Historial** | Registro de ventas, créditos y cierre de caja  ![descripcion](https://github.com/DanyR1411/POS-Elite/blob/main/assets/historial.PNG) |
+| ⚙️ **Admin** | Gestión de productos, clientes y configuración  ![descripcion](https://github.com/DanyR1411/POS-Elite/blob/main/assets/admin.PNG) |
 
 ---
 
