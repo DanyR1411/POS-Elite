@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --win"
+    "build": "electron-builder --win",
+    "netlify": "echo 'Static site - no build needed'"
   },
   "build": {
     "appId": "com.pos.elite",

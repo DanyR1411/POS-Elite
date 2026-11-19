@@ -21,4 +21,9 @@ desktop.ini
 
 # Datos locales de la aplicación
 POS-Elite-Data/
+state/
 *.json.bak
+
+# Archivos de Electron (no relevantes para Netlify)
+dist/
+out/
