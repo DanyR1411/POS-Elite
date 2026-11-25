@@ -1,0 +1,65 @@
+name: CI - POS Elite Pro
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validar Sintaxis y Archivos Estáticos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Validar sintaxis de JavaScript (main.js)
+        run: node -c main.js
+
+      - name: Verificar archivos esenciales para Netlify y SPA
+        run: |
+          test -f index.html || (echo "Falta index.html" && exit 1)
+          test -f netlify.toml || (echo "Falta netlify.toml" && exit 1)
+          test -f _redirects || (echo "Falta _redirects" && exit 1)
+          echo "Todos los archivos requeridos están presentes."
+
+  build-windows:
+    name: Compilar Instalador Windows (Electron)
+    runs-on: windows-latest
+    needs: validate
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Construir empaquetado con electron-builder
+        run: npm run build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Subir instalador como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: pos-elite-windows-installer
+          path: dist/*.exe
+          if-no-files-found: error
+          retention-days: 14
